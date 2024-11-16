@@ -203,3 +203,85 @@ print(opprojection([4.0,4.0],[8.0,2.0]))
 # o/p
 (np.float64(4.0), array([4., 4.]))
 (np.float64(0.5882352941), array([4.70588235, 1.17647059]))'''
+
+
+#prac.6)
+#WAP to calculate eigen value and order 2 and order 3
+#A)eigen value or eigen vector of order 2*2 matrix
+'''import numpy as np
+A=np.matrix("3 -2; 1 0")
+print("A\n",A)
+print("Eigenvalues",np.linalg.eigvals(A))
+eigenvalues,eigenvectors=np.linalg.eig(A)
+print("first tuple of eig",eigenvalues)
+print("second tuple of eig\n",eigenvectors)
+for i in range(len(eigenvalues)):
+ print("left",np.dot(A,eigenvectors[:,i]))
+ print(...)
+
+#  o/p
+A
+ [[ 3 -2]
+ [ 1  0]]
+Eigenvalues [2. 1.]
+first tuple of eig [2. 1.]
+second tuple of eig
+ [[0.89442719 0.70710678]
+ [0.4472136  0.70710678]]
+left [[1.78885438]
+ [0.89442719]]
+Ellipsis
+left [[0.70710678]
+ [0.70710678]]
+Ellipsis '''
+
+# B)eigen value and eigen vector of order #*3 matrix
+'''import numpy as np
+A=np.matrix("2 0 0;0 3 4;0 4 9")
+print("A\n",A)
+print("Eigenvalues",np.linalg.eigvals(A))
+eigenvalues,eigenvectors=np.linalg.eig(A)
+print("first tuple of eig",eigenvalues)
+print("second tuple of eig\n",eigenvectors)
+for i in range(len(eigenvalues)):
+ print("left",np.dot(A,eigenvectors[:,i]))
+ print(...)
+
+#  o/p
+A
+ [[2 0 0]
+ [0 3 4]
+ [0 4 9]]
+Eigenvalues [11.  1.  2.]
+first tuple of eig [11.  1.  2.]
+second tuple of eig
+ [[ 0.          0.          1.        ]
+ [ 0.4472136   0.89442719  0.        ]
+ [ 0.89442719 -0.4472136   0.        ]]
+left [[0.        ]
+ [4.91934955]
+ [9.8386991 ]]
+Ellipsis
+left [[ 0.        ]
+ [ 0.89442719]
+ [-0.4472136 ]]
+Ellipsis
+left [[2.]
+ [0.]
+ [0.]]
+Ellipsis'''
+
+
+# prac.7)
+#implement googles page rank algorithm
+'''import networkx as nx
+import pylab as plt
+D=nx.DiGraph()
+D.add_weighted_edges_from([('A','B',1),('C','A',1),('B','C',1)])
+print(nx.pagerank(D))
+nx.draw(D,with_labels=True)
+plt.show()
+ 
+#  o/p
+{'A': 0.3333333333333333, 'B': 0.3333333333333333, 'C': 0.3333333333333333}'''
+
